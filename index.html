@@ -42,22 +42,41 @@
 
 		<div class="row">
 		  	<div class="col-sm-6 pull-left text left">
-				<form action="" method="post" role="form">
-				    <div class="input-group">
+				<form name="emailSub" ng-submit="submitEmail()" ng-controller="SubscribeController">
+				    <div class="input-group form-group">
 				      <span class="input-group-addon">
 				        <i class="fa fa-envelope" type="button"> Subscribe to our newsletter</i>
 				      </span>
-				      <input type="text" class="form-control" placeholder="your@email.com">
+				      <input type="text" class="form-control" ng-model="subscriberEmail" placeholder="your@email.com">
 				      <span class="input-group-btn">
-				        <button class="btn bt-sm btn-primary" type="submit">Subscribe!</button>
+				        <button class="btn bt-sm btn-primary btnsubmit" type="submit" ng-disabled="">Subscribe!</button>
 				      </span>
 				    </div>
 				</form>
 			</div>
 		</div>
 	</footer>
+	<script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDHCnKO95wks5f5K_EYKR6txLFTJ7q5E3s",
+	    authDomain: "swingband-bb4ac.firebaseapp.com",
+	    databaseURL: "https://swingband-bb4ac.firebaseio.com",
+	    storageBucket: "swingband-bb4ac.appspot.com",
+	    messagingSenderId: "265838468670"
+	  };
+	  firebase.initializeApp(config);
+	var database = firebase.database();
+	
+	</script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase-messaging.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controller.js"></script>
 	<script src="js/directives.js"></script>
+	<script src="js/services.js"></script>
 </body>
 </html>
